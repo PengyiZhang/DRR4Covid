@@ -1,4 +1,4 @@
-Release Version 08.08.2017
+Modified by Pengyi Zhang for infection-aware DRR generator @2020-08
 
 Python extension module for Siddon Class.
 

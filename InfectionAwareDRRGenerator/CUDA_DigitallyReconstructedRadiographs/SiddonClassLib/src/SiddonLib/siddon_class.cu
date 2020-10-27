@@ -14,7 +14,7 @@
 *
 *
 * -----------------------------------------------------------------
-* Modified by Pengyi Zhang for infection-aware DRR generator
+* Modified by Pengyi Zhang for infection-aware DRR generator @2020-08
 * -----------------------------------------------------------------
 */
 
