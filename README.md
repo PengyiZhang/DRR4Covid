@@ -15,6 +15,44 @@ Automated infection measurement and COVID-19 diagnosis based on Chest X-ray (CXR
 ![](/figs/figuresv2.0_fcn.png)
 
 
+## Dataset
+
+### CT volumes 
+
+1. [COVID-19-CT-Seg dataset](https://zenodo.org/record/3757476#.X5e9SWgzY2x)
+
+### CXRs
+
+1. [Radiopaedia](https://radiopaedia.org)
+
+
+2. [COVID-19 image data collection](https://github.com/ieee8023/covid-chestxray-dataset)
+
+3. [Chest XRay Images (Pneumonia)](https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia)
+
+4. [SIRM](https://www.sirm.org/category/senza-categoria/covid-19/)
+
+5. [Twitter COVID-19 CXR dataset](http://twitter.com/ChestImaging/)
+
+6. [Hannover Medical School dataset](https://github.com/ml-workgroup/covid-19-image-repository)
+
+7. [Bimcv covid-19+](https://bimcv.cipf.es/bimcv-projects/bimcv-covid19/)
+
+
+## Steps for Training and evaluation
+
+1. [The synthesis of infection-aware DRRs](/InfectionAwareDRRGenerator/README.md) 
+
+2. [Preparation for real CXRs]()
+
+3. [Training without using domain adaptation](/FCNClsSegModel/README.md)
+
+4. [Training with using our domain adaptation module](/FCNClsSegModel/README.md)
+
+5. [Evaluating the model trained by not using domain adaptation](/FCNClsSegModel/README.md)
+
+6. [Evaluating the model trained by using domain adaptation](/FCNClsSegModel/README.md)
+
 
 -------------
 

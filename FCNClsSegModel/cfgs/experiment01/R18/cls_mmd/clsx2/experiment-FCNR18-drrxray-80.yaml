@@ -1,0 +1,78 @@
+common:
+    experiment: "BSFCNR18-drrxray-cls-only-82"
+    encoder_arch: "resnet18"
+    encoder_weights:
+    fc_dim: 512
+    decoder_arch: "fcn"
+    decoder_weights:
+    use_aux: False
+    bottle_neck: False
+    seg_num_classes: 3
+    seg_class_weights: [0.1, 1.0, 5.0]
+    cls_num_classes: 2
+    seg_augment: True
+    cls_augment: True
+
+    do_cls: True
+    do_cls_mmd: False
+
+    do_seg: False
+    do_seg_mmd: False
+
+    lambda_cls: 1.0
+    lambda_cls_mmd: 0.3
+    lambda_seg: 1.0
+    lmabda_seg_mmd: 0.3
+
+    gpuid: 0
+    logs: "logs_experiment01"
+    batch_size: 16
+    num_epochs: 100
+    load_size: 1024
+    crop_sizes: [800, 1023]
+    img_size: 256
+    input_channel: 3
+    debug: False
+    random_seed: 2020
+    mode: 12 # 0: x-ray, 1: only drr, 2: drr+xray+lmmd
+    lr: 0.0001
+    rotation: 30
+
+    eval_times: 10 # seg
+    eval_cls_times: 1
+
+    # whole datasets readme
+    # DRR uses COVID-CT-Infection-Seg datasets
+    total_drr_datasets_weights: [[24.0,1.0], [12.0,1.0], [6.0,1.0], [3.0,1.0], [1.5,1.0], [1.0,1.0], [1.0,1.5], [1.0,3.0], [1.0,6.0], [1.0,12.0]]
+    total_drr_datasets_thresholds: [0.4, 0.2, 0.15, 0.1, 0.05, 0.01, 0.0]
+    total_drr_datasets_indexes: ["01", "02", "03"]
+    drr_root: "../data/source"
+    drr_folder_prefix: "drr_1000"
+    drr_mask_dir: "mask"
+    drr_img_dir: "img"
+
+    # dataset config [0, 0, 0]: the first one stands for weights [24.0,1.0]
+    # the second one stands for threshold: 0.4, dataset folder index is 1
+    selected_drr_datasets_indexes: [[0, 0, 0], [8, 2, 0]] # , [0, 0, 1], [-3, 3, 1]
+    drr_mask_value_dict: {"background": 0, "lung": 128, "infection": 255}
+
+
+    # xray cls dataset, 119 COVID for train, 100 for test, the number of normal cases is same as COVID-19
+    # Using Kaggle COVID-19 Radiography Database
+    xray_cls_root: "../data/target/infection_cls"
+    xray_cls_positive_dir: "covid19"
+    xray_cls_negative_dir: "normal"
+    xray_cls_val_num: 100
+
+    # xray lung seg dataset
+    xray_lung_seg_root: "../data/target/lung_seg"
+    xray_lung_seg_img_dir: "CXR_png"
+    xray_lung_seg_mask_dir: "masks"
+    xray_lung_seg_val_num: 600
+    xray_mask_value_dict: {"background": 0, "lung": 255}
+
+    # xray infection seg dataset
+    xray_inf_seg_root: "../data/target/infection_seg"
+    xray_inf_seg_img_dir: "images"
+    xray_inf_seg_mask_dir: "masks"
+    xray_inf_seg_val_num: 15

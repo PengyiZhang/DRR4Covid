@@ -408,7 +408,7 @@ def get_argument():
     selected_drr_datasets_indexes[3][-1] = 1
     opt.selected_drr_datasets_indexes = [list(_) for _ in list(selected_drr_datasets_indexes)]
 
-    #opt.logs = "logs_experiment03_r5050"
+    
 
     
 

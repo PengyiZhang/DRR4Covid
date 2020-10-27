@@ -53,7 +53,7 @@ class Classifer(nn.Module):
 
         return src_pred
 
-# 应当使得模型权重保持一致，方便进行模型的pretrained model的初始化操作
+
 class SegClsModule(nn.Module):
     def __init__(self, args):
         super(SegClsModule, self).__init__()
